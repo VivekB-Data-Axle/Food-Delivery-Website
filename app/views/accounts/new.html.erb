@@ -1,0 +1,25 @@
+<h1>Create Account</h1>
+<%= render "shared/errors"%>
+<%= form_with scope: :account, url: accounts_path, local: true do |f|%>
+<p>
+    <%= f.label :account_name %><br>
+    <%= f.text_field :account_name, placeholder: "Enter username" %>
+</p>
+<p>
+    <%= f.label :account_email %><br>
+    <%= f.email_field :account_email, placeholder: "Enter Email-ID" %>
+</p>
+<p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, placeholder: "Enter password" %>
+</p>
+<p>
+    <%= f.label :options, "Create Account as User/Restaurant" %><br>
+    <%= f.radio_button :role, 1 %> User<br>
+    <%= f.radio_button :role, 2 %> Restaurant<br>
+</p>
+
+<p>
+    <%= f.submit "Sign Up" %>
+</p>
+<% end %>

@@ -1,4 +1,6 @@
 class Account < ApplicationRecord
+  has_one :user, dependent: :destroy
+  has_one :restaurant, dependent: :destroy
   before_save { self.account_email = account_email.downcase }
 
   validates :account_name,

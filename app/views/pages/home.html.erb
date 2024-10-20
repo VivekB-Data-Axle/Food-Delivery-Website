@@ -1,2 +1,9 @@
 <title> Home </title>
 <h1> Food Delivery Website </h1>
+<% if !logged_in? %>
+  <%= link_to "Login", login_path %>
+  <%= link_to "Signup", signup_path %>
+<% else %>
+  <%= link_to "Log Out", login_path, data: { turbo_method: :delete }%>
+<% end %>
+<%= render "shared/errors"%>

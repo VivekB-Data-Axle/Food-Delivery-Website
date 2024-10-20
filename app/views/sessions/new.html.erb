@@ -1,0 +1,15 @@
+<h1>Login</h1>
+<%= render "shared/errors"%>
+<%= form_with scope: :session, url: login_path, local: true do |f|%>
+<p>
+    <%= f.label :account_email %><br>
+    <%= f.email_field :account_email, placeholder: "Email-ID" %>
+</p>
+<p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, placeholder: "Password" %>
+</p>
+<p>
+    <%= f.submit "Login" %>
+</p>
+<% end %>

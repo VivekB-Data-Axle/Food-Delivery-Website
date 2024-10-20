@@ -1,0 +1,7 @@
+<p><%= flash[:notice] %></p>
+<% arr = flash[:errors] %>
+<% if (arr != nil) %>
+    <% arr.each do |err| %>
+        <p><%= err %></p>
+    <% end %>
+<% end %>
